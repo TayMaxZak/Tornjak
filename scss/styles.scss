@@ -15,6 +15,7 @@ $dark-medium: #202020;
 $dark-light: rgb(36 36 36);
 $white: #F3F3F3;
 $off-white: #e8e8e8;
+$break-sm: 480px;
 $break-med: 600px;
 $break-lg: 768px;
 $break-xl: 1024px;
@@ -29,6 +30,12 @@ $line-height-lg: 1.75rem;
 $shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
 
 // Mixins
+@mixin mobile-only {
+    @media (min-width: $break-sm) {
+        @content;
+    }
+}
+
 @mixin tablet-only {
     @media (min-width: $break-med) and (max-width: #{$break-lg - 1px}) {
         @content;
@@ -305,7 +312,7 @@ li {
     &::after {
         content: "";
         display: block;
-        width: 45px;
+        width: 3rem;
         height: 1px;
         background: $gold;
         position: absolute;
@@ -682,7 +689,7 @@ footer {
             }
 
             .line::after {
-                right: -27%;
+                right: -4rem;
             }
         }
 
@@ -966,7 +973,7 @@ footer {
 
             .line::after {
                 @include desktop {
-                    left: 103%;
+                    right: -4rem;
                 }
             }
         }
@@ -1293,11 +1300,7 @@ footer {
 
     .quick-words {
         .line::after {
-            right: -22%;
-
-            @include desktop {
-                right: -25%;
-            }
+            right: -4rem;
         }
     }
 }
@@ -1462,29 +1465,13 @@ footer {
 
             .line::after {
                 @include desktop {
-                    right: -33%;
+                    right: -4rem;
                 }
             }
         }
 
         &-top {
             position: relative;
-        }
-    }
-}
-
-// =========================
-// Stories Page
-// =========================
-#page-stories {
-    .hero {
-        background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-family.jpg") no-repeat center center;
-        background-size: cover;
-
-        @include desktop() {
-            background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-family.jpg") no-repeat top left;
-            background-size: cover;
-            height: 600px;
         }
     }
 }

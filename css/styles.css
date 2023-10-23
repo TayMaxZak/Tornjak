@@ -81,7 +81,8 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
   /* 2 */
 }
 
@@ -440,6 +441,7 @@ li {
 
 .main-btn {
   display: inline-block;
+  width: -moz-min-content;
   width: min-content;
   border: 1px solid #d5a269;
   padding: 10px 14px;
@@ -568,7 +570,7 @@ li {
 .line::after {
   content: "";
   display: block;
-  width: 45px;
+  width: 3rem;
   height: 1px;
   background: #d5a269;
   position: absolute;
@@ -752,6 +754,7 @@ footer .footer .credentials {
   .hero-text {
     top: 35%;
     left: 5%;
+    width: -moz-max-content;
     width: max-content;
     max-width: none;
     margin: 0;
@@ -771,6 +774,7 @@ footer .footer .credentials {
 }
 .hero-text .lines {
   color: #d5a269;
+  width: -moz-fit-content;
   width: fit-content;
   position: relative;
 }
@@ -864,6 +868,7 @@ footer .footer .credentials {
 }
 .quick-words-title {
   text-align: left;
+  width: -moz-fit-content;
   width: fit-content;
 }
 @media (min-width: 768px) {
@@ -909,7 +914,7 @@ footer .footer .credentials {
     padding-left: 38%;
   }
   .quick-words-bottom .line::after {
-    right: -27%;
+    right: -4rem;
   }
 }
 .quick-words-bottom a {
@@ -968,6 +973,7 @@ footer .footer .credentials {
 }
 .card .lines {
   color: #d5a269;
+  width: -moz-fit-content;
   width: fit-content;
   position: relative;
 }
@@ -1087,6 +1093,7 @@ footer .footer .credentials {
 }
 .card span {
   display: block;
+  width: -moz-max-content;
   width: max-content;
 }
 
@@ -1160,7 +1167,7 @@ footer .footer .credentials {
 }
 @media (min-width: 768px) {
   .news-tile-text .read-more .line::after {
-    left: 103%;
+    right: -4rem;
   }
 }
 .news .tile-stories,
@@ -1422,12 +1429,7 @@ footer .footer .credentials {
   margin: 10px auto 50px;
 }
 #page-tcna .quick-words .line::after {
-  right: -22%;
-}
-@media (min-width: 768px) {
-  #page-tcna .quick-words .line::after {
-    right: -25%;
-  }
+  right: -4rem;
 }
 
 #page-breeders .hero {
@@ -1535,6 +1537,7 @@ footer .footer .credentials {
   font-family: "Playfair Display", serif;
   font-weight: 400;
   text-transform: uppercase;
+  width: -moz-fit-content;
   width: fit-content;
   box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
   top: 2%;
@@ -1558,23 +1561,11 @@ footer .footer .credentials {
 }
 @media (min-width: 768px) {
   #article.page-events .event-card-bottom .line::after {
-    right: -33%;
+    right: -4rem;
   }
 }
 #article.page-events .event-card-top {
   position: relative;
-}
-
-#page-stories .hero {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-family.jpg") no-repeat center center;
-  background-size: cover;
-}
-@media (min-width: 768px) {
-  #page-stories .hero {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-family.jpg") no-repeat top left;
-    background-size: cover;
-    height: 600px;
-  }
 }
 
 #membership {
@@ -1641,6 +1632,59 @@ footer .footer .credentials {
 }
 #article.unethical-breeders .event-card hr {
   width: 50px;
+  height: 1px;
+  background-color: #d5a269;
+  border: none;
+}
+
+#page-stories {
+  background: #1a1a1a;
+}
+#page-stories .story-container {
+  -moz-columns: 1 auto;
+       columns: 1 auto;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+  padding: 0.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media (min-width: 480px) {
+  #page-stories .story-container {
+    -moz-columns: 2 auto;
+         columns: 2 auto;
+    -moz-column-gap: 1.5rem;
+         column-gap: 1.5rem;
+    padding: 1.5rem;
+  }
+}
+@media (min-width: 768px) {
+  #page-stories .story-container {
+    -moz-columns: 3 auto;
+         columns: 3 auto;
+    -moz-column-gap: 1.5rem;
+         column-gap: 1.5rem;
+    padding: 1.5rem;
+  }
+}
+#page-stories .story-container .story-card {
+  width: 100%;
+  background: rgb(36, 36, 36);
+  margin: 0 1rem 1rem 0;
+  display: inline-block;
+  text-align: left;
+}
+#page-stories .story-container .story-card-bottom {
+  padding: 25px;
+}
+#page-stories .story-container .story-card p:nth-of-type(2) {
+  margin-top: 10px;
+}
+#page-stories .story-container .story-card img {
+  width: 100%;
+}
+#page-stories .story-container .story-card hr {
+  width: 100%;
   height: 1px;
   background-color: #d5a269;
   border: none;
